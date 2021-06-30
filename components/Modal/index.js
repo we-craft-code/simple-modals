@@ -1,4 +1,7 @@
-const Modal = ({ toggleModal }) => {
+const Modal = ({ show, toggle }) => {
+  if (!show) {
+    return null;
+  }
   return (
     <div
       className="fixed top-0 bottom-0 left-0 right-0 bg-gray-500 p-44"
@@ -12,7 +15,7 @@ const Modal = ({ toggleModal }) => {
         <div className="h-16 p-8 border-t border-gray-200 flex justify-end items-center gap-2">
           <button
             className="bg-red-600 hover:bg-red-800 text-white px-2 py-1 rounded-sm shadow-sm"
-            onClick={() => toggleModal(false)}
+            onClick={() => toggle(false)}
           >
             CANCEL
           </button>
